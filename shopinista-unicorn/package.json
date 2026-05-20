@@ -1,0 +1,11 @@
+{
+"name":"shopinista-unicorn",
+"version":"1.0.0",
+"type":"module",
+"main":"server.js",
+"dependencies":{
+"express":"^4.19.2",
+"helmet":"^7.0.0",
+"cors":"^2.8.5"
+}
+}

@@ -1,0 +1,33 @@
+body{
+margin:0;
+font-family:Segoe UI;
+background:radial-gradient(circle at top,#0b1220,#05070d);
+color:white;
+}
+
+.nav{
+padding:20px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+padding:40px;
+border-radius:18px;
+background:linear-gradient(145deg,#111827,#020617);
+box-shadow:0 0 30px rgba(0,255,255,.2);
+transition:.4s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 60px cyan;
+}

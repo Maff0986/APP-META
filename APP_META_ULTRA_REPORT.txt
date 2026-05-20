@@ -1,0 +1,117 @@
+=====================================================
+ SHOPINISTA META — ULTRA ARCHITECTURE REPORT
+ Generated: 03/16/2026 20:52:34
+=====================================================
+
+📦 DEPENDENCY ARCHITECTURE
+-----------------------------------------------------
+Project Name: shopinista-core
+Version: 1.0.0
+
+Dependencies:
+ - express : ^4.19.2
+ - axios : ^1.6.8
+ - dotenv : ^16.4.5
+
+Scripts:
+ - start => node server.js
+
+🧩 SERVER ARCHITECTURE CHECK
+-----------------------------------------------------
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\admin\node_modules\@grpc\grpc-js\build\src\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\admin\node_modules\@grpc\grpc-js\build\src\generated\grpc\channelz\v1\Server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\admin\node_modules\react-dom\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\admin\node_modules\websocket-driver\lib\websocket\driver\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\backend\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\functions\node_modules\@grpc\grpc-js\build\src\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\functions\node_modules\@grpc\grpc-js\build\src\generated\grpc\channelz\v1\Server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\functions\node_modules\websocket-driver\lib\websocket\driver\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\shopinista-saas\server.js
+Server detected:
+C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta\shopinista-unicorn\server.js
+⚠️ Multiple servers detected → risk of port conflicts
+
+🔐 ENV STRUCTURE (Keys only)
+-----------------------------------------------------
+ - CLIENT_ID=*****
+ - CLIENT_SECRET=*****
+
+🧭 ROUTE SYSTEM ANALYSIS
+-----------------------------------------------------
+Route file: auth.js
+Route file: authRoutes.js
+Route file: meta.js
+Route file: webhook.js
+
+📄 CRITICAL FILE CONTENTS
+-----------------------------------------------------
+
+🧠 ARCHITECTURAL DIAGNOSIS
+-----------------------------------------------------
+Current architecture indicates:
+
+• Express monolithic backend
+• Static frontend served by backend
+• Meta OAuth integration in progress
+• Multi-module SaaS intention
+• Auto-loaded routing system
+• Webhook-ready structure
+• Scheduler and automation planned
+
+Risk Areas:
+- OAuth token persistence incomplete
+- Possible duplicated server instances
+- Frontend routing fallback may hide API errors
+- Missing production session management
+
+🚀 INTENDED APPLICATION VISION (RECONSTRUCTED)
+-----------------------------------------------------
+The application appears designed as:
+
+A SaaS platform named Shopinista Meta intended to:
+
+1. Connect multiple businesses to Meta (Facebook + Instagram)
+2. Authenticate via OAuth
+3. Manage social media publishing automatically
+4. Generate AI content (reels, posts, catalog creatives)
+5. Synchronize product catalogs
+6. Provide dashboard analytics
+7. Automate posting via scheduler
+8. Support multi-tenant store connections
+
+Target Outcome:
+A centralized automation platform for ecommerce brands
+to manage marketing and publishing workflows from one dashboard.
+
+🧑‍💻 SENIOR ENGINEER RECOMMENDATIONS
+-----------------------------------------------------
+Immediate:
+• Centralize OAuth token storage
+• Add /api prefix separation
+• Implement global error middleware
+• Validate callback state parameter
+
+Production:
+• JWT or session store
+• Reverse proxy (Nginx)
+• Environment separation (.env.production)
+• Logging pipeline
+
+Finalization:
+• Multi-tenant schema
+• Publishing queue system
+• Background worker service
+• Meta webhook verification
+
+================ END ULTRA REPORT ==================

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopinista Meta Platform</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<header>🚀 Shopinista Meta Platform</header>
+
+<div class="grid">
+
+<div class="card">
+<h3>📊 Sistema</h3>
+<button onclick="status()">Estado</button>
+<p id="status"></p>
+</div>
+
+<div class="card">
+<h3>🤖 IA Marketing</h3>
+<input id="q">
+<button onclick="ask()">Preguntar</button>
+<p id="r"></p>
+</div>
+
+<div class="card">
+<h3>🔗 Webhook</h3>
+<p>Listo para Meta Review</p>
+</div>
+
+<div class="card">
+<h3>🛡 Seguridad</h3>
+<p>Helmet activo</p>
+</div>
+
+</div>
+
+<script>
+
+async function status(){
+let r=await fetch("/api/status")
+let d=await r.json()
+document.getElementById("status").innerText=d.status
+}
+
+async function ask(){
+let q=document.getElementById("q").value
+document.getElementById("r").innerText="Idea: publicar reels mostrando uso real."
+}
+
+</script>
+
+</body>
+</html>

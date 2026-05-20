@@ -1,0 +1,225 @@
+=====================================================
+ SHOPINISTA META — TECHNICAL STATUS REPORT
+ Generated: 03/16/2026 20:19:54
+ Path: C:\Users\HP-Home\Documents\Projectos_Rosalia\App_Meta
+=====================================================
+
+📁 MAIN ARCHITECTURE
+-----------------------------------------------------
+ - admin
+    ↳ node_modules
+    ↳ src
+ - ai
+ - assets
+ - auth
+ - backend
+    ↳ auth
+    ↳ node_modules
+    ↳ routes
+    ↳ utils
+ - canva
+ - catalog
+ - config
+ - controllers
+ - crm
+ - database
+ - frontend
+    ↳ assets
+    ↳ canva
+    ↳ catalog
+    ↳ components
+    ↳ crm
+    ↳ dashboard
+    ↳ pages
+    ↳ reels
+    ↳ studio
+    ↳ styles
+ - functions
+    ↳ meta
+    ↳ node_modules
+    ↳ src
+ - integrations
+    ↳ canva
+    ↳ meta
+ - logs
+ - meta
+ - middleware
+ - node_modules
+    ↳ .bin
+    ↳ accepts
+    ↳ array-flatten
+    ↳ asynckit
+    ↳ axios
+    ↳ body-parser
+    ↳ bytes
+    ↳ call-bind-apply-helpers
+    ↳ call-bound
+    ↳ combined-stream
+    ↳ content-disposition
+    ↳ content-type
+    ↳ cookie
+    ↳ cookie-signature
+    ↳ debug
+    ↳ delayed-stream
+    ↳ depd
+    ↳ destroy
+    ↳ dotenv
+    ↳ dunder-proto
+    ↳ ee-first
+    ↳ encodeurl
+    ↳ es-define-property
+    ↳ es-errors
+    ↳ es-object-atoms
+    ↳ es-set-tostringtag
+    ↳ escape-html
+    ↳ etag
+    ↳ express
+    ↳ finalhandler
+    ↳ follow-redirects
+    ↳ form-data
+    ↳ forwarded
+    ↳ fresh
+    ↳ function-bind
+    ↳ get-intrinsic
+    ↳ get-proto
+    ↳ gopd
+    ↳ has-symbols
+    ↳ has-tostringtag
+    ↳ hasown
+    ↳ http-errors
+    ↳ iconv-lite
+    ↳ inherits
+    ↳ ipaddr.js
+    ↳ math-intrinsics
+    ↳ media-typer
+    ↳ merge-descriptors
+    ↳ methods
+    ↳ mime
+    ↳ mime-db
+    ↳ mime-types
+    ↳ ms
+    ↳ negotiator
+    ↳ object-inspect
+    ↳ on-finished
+    ↳ parseurl
+    ↳ path-to-regexp
+    ↳ proxy-addr
+    ↳ proxy-from-env
+    ↳ qs
+    ↳ range-parser
+    ↳ raw-body
+    ↳ safe-buffer
+    ↳ safer-buffer
+    ↳ send
+    ↳ serve-static
+    ↳ setprototypeof
+    ↳ side-channel
+    ↳ side-channel-list
+    ↳ side-channel-map
+    ↳ side-channel-weakmap
+    ↳ statuses
+    ↳ toidentifier
+    ↳ type-is
+    ↳ unpipe
+    ↳ utils-merge
+    ↳ vary
+ - Nueva carpeta
+ - public
+    ↳ admin
+ - routes
+ - scheduler
+ - scripts
+ - security
+ - services
+ - shopinista-saas
+    ↳ node_modules
+    ↳ public
+    ↳ routes
+    ↳ views
+ - shopinista-unicorn
+    ↳ node_modules
+    ↳ public
+    ↳ routes
+    ↳ views
+ - src
+    ↳ automation
+    ↳ config
+    ↳ middleware
+    ↳ routes
+    ↳ services
+ - styles
+ - utils
+ - webhooks
+
+📄 CORE FILES DETECTED
+-----------------------------------------------------
+ ✅ server.js
+ ✅ package.json
+ ✅ .env
+ ✅ firebase.json
+
+⚙️ BACKEND ANALYSIS
+-----------------------------------------------------
+ Routes detected: 4
+   - auth.js
+   - authRoutes.js
+   - meta.js
+   - webhook.js
+ ✅ controllers folder present
+ ✅ middleware detected
+
+🖥 FRONTEND ANALYSIS
+-----------------------------------------------------
+ ✅ index.html detected
+   ↳ frontend/assets
+   ↳ frontend/canva
+   ↳ frontend/catalog
+   ↳ frontend/components
+   ↳ frontend/crm
+   ↳ frontend/dashboard
+   ↳ frontend/pages
+   ↳ frontend/reels
+   ↳ frontend/studio
+   ↳ frontend/styles
+
+🔐 AUTH & OAUTH STATUS
+-----------------------------------------------------
+ ⚠️ META_APP_ID missing
+ ⚠️ META_APP_SECRET missing
+
+🚨 STRUCTURAL WARNINGS
+-----------------------------------------------------
+ ⚠️ Duplicate backend/server.js may cause nodemon errors
+
+📊 PROJECT PROGRESS ESTIMATION
+-----------------------------------------------------
+ Estimated completion: 90 %
+
+🧠 CURRENT RECOMMENDATIONS (DEV)
+-----------------------------------------------------
+ - Implement token persistence (DB)
+ - Add centralized error handler
+ - Validate OAuth callback states
+ - Add logger levels (info/warn/error)
+ - Secure ENV variables
+
+🚀 PRODUCTION READINESS
+-----------------------------------------------------
+ - HTTPS required
+ - Replace ngrok with domain
+ - Add Redis session store
+ - Rate limiting middleware
+ - Deploy using PM2 or Docker
+
+🏁 STEPS TO FINISH APP
+-----------------------------------------------------
+ 1. Complete Meta OAuth token storage
+ 2. Fetch IG accounts automatically
+ 3. Dashboard connection status
+ 4. Reel publishing service
+ 5. Scheduler automation
+ 6. SaaS multi-tenant logic
+
+=====================================================
+ END OF REPORT
+=====================================================

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>Panel Admin - App Meta</title>
+
+  <script src='https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js'></script>
+
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, button { margin: 5px; padding: 8px; }
+    .producto { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+    .acciones button { margin-right: 10px; }
+  </style>
+</head>
+
+<body>
+  <button onclick='logout()'>Cerrar sesión</button>
+  <h1>Panel Admin</h1>
+
+  <h2>Crear / Editar Producto</h2>
+  <input id='idProducto' type='hidden'>
+  <input id='nombre' placeholder='Nombre'>
+  <input id='precio' placeholder='Precio' type='number'>
+  <input id='stock' placeholder='Stock' type='number'>
+  <input id='categoria' placeholder='Categoría'>
+  <input id='imagen' type='file'>
+  <button onclick='guardarProducto()'>Guardar</button>
+  <button onclick='limpiarFormulario()'>Limpiar</button>
+
+  <h2>Productos</h2>
+  <div id='lista'></div>
+
+  <script src='auth.js'></script>
+  <script src='admin.js'></script>
+</body>
+</html>
