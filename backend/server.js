@@ -3,11 +3,45 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const db = require('./config/database');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
+
+/* =============================
+   POST CONTROLLERS
+============================= */
+
+async function getPost(id) {
+  try {
+    const post = await db.Post.findByPk(id);
+    return post;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function listPosts(options = {}) {
+  try {
+    const posts = await db.Post.findAll(options);
+    return posts;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function deletePost(id) {
+  try {
+    const result = await db.Post.destroy({
+      where: { id }
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
 
 /* =============================
    AUTO LOAD ROUTES (SAFE)
@@ -59,6 +93,19 @@ app.get("/",(req,res)=>{
 });
 
 /* =============================
+   DATABASE SYNC
+============================= */
+
+(async () => {
+  try {
+    await db.sync();
+    console.log("✅ Database synced successfully");
+  } catch (error) {
+    console.error("❌ Database sync failed:", error);
+  }
+})();
+
+/* =============================
    SMART PORT START
 ============================= */
 
@@ -80,3 +127,6 @@ const startServer = (port) => {
 };
 
 startServer(process.env.PORT || 3000);
+
+// Export controller functions for route access
+module.exports = { getPost, listPosts, deletePost };
