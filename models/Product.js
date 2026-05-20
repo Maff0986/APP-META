@@ -12,6 +12,7 @@ const Product = sequelize.define('Product', {
   url:         { type: DataTypes.TEXT },
   metaId:      { type: DataTypes.STRING },
   catalogId:   { type: DataTypes.STRING },
+  tiendanubeId: { type: DataTypes.INTEGER, unique: true },
   synced:      { type: DataTypes.BOOLEAN, defaultValue: false }
 }, { tableName: 'products', timestamps: true });
 
