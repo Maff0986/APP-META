@@ -1,33 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset='UTF-8'>
-<title>Shopinista Meta</title>
-<link rel='stylesheet' href='styles/style.css'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopinista Meta</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
-
 <body>
 
-<div class='bg'></div>
-
-<nav class='nav'>
-<h1>🚀 Shopinista Meta</h1>
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="toggle-sidebar" id="toggleSidebar" aria-label="Toggle sidebar">☰</button>
+    <div class="navbar-logo"><span>✦</span> Shopinista Meta</div>
+  </div>
+  <div class="navbar-status">
+    <div class="status-dot"><span class="dot" id="dot-tn"></span><span id="lbl-tn">Tiendanube</span></div>
+    <div class="status-dot"><span class="dot" id="dot-cv"></span><span id="lbl-cv">Canva</span></div>
+    <div class="status-dot"><span class="dot" id="dot-meta"></span><span id="lbl-meta">Meta</span></div>
+    <div class="avatar">U</div>
+  </div>
 </nav>
 
-<section class='grid'>
+<!-- ── LAYOUT ── -->
+<div class="app-body">
 
-<div class='card'>📢 Publicador Instagram</div>
-<div class='card'>🤖 IA Asistente</div>
-<div class='card'>📊 CRM Leads</div>
-<div class='card'>📅 Scheduler</div>
-<div class='card'>🛒 Catálogo API</div>
-<div class='card'>🎨 Canva Studio</div>
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-btn active" data-section="home">
+      <span class="sidebar-icon">🏠</span><span class="sidebar-label">Inicio</span>
+    </button>
+    <button class="sidebar-btn" data-section="tiendanube">
+      <span class="sidebar-icon">🛒</span><span class="sidebar-label">Tiendanube</span>
+    </button>
+    <button class="sidebar-btn" data-section="canva">
+      <span class="sidebar-icon">🎨</span><span class="sidebar-label">Canva</span>
+    </button>
+    <button class="sidebar-btn" data-section="publicador">
+      <span class="sidebar-icon">📢</span><span class="sidebar-label">Publicador IA</span>
+    </button>
+    <button class="sidebar-btn" data-section="editor">
+      <span class="sidebar-icon">✍️</span><span class="sidebar-label">Editor de Post</span>
+    </button>
+    <button class="sidebar-btn" data-section="scheduler">
+      <span class="sidebar-icon">📅</span><span class="sidebar-label">Cola de Públic.</span>
+    </button>
+    <button class="sidebar-btn" data-section="gallery">
+      <span class="sidebar-icon">🖼️</span><span class="sidebar-label">Gallery AI</span>
+    </button>
+    <button class="sidebar-btn" data-section="calendar">
+      <span class="sidebar-icon">📆</span><span class="sidebar-label">Calendario</span>
+    </button>
+  </aside>
 
-<a href="/auth/login">
-  <button>Conectar Tiendanube</button>
-</a>
+  <!-- ── MAIN CONTENT ── -->
+  <main class="app-content" id="app-content">
+    <!-- Injected by app.js -->
+  </main>
 
-</section>
+</div>
 
+<!-- ── ALERT BAR ── -->
+<div id="alert-bar" style="display:none;"></div>
+
+<!-- ── PANEL OVERLAY ── -->
+<div class="panel-overlay" id="panelOverlay" onclick="app.closePanel()"></div>
+
+<!-- ── MODAL ========== LIGHTBOX ── -->
+<div id="lightboxBackdrop" class="modal-backdrop" style="display:none;">
+  <div class="modal" style="text-align:center;">
+    <button class="btn btn-ghost btn-sm modal-close" onclick="app.closeLightbox()">✕</button>
+    <div id="lightboxBody"></div>
+  </div>
+</div>
+
+<!-- ── TOAST CONTAINER ── -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- ── SCRIPTS ── -->
+<script src="js/storage.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

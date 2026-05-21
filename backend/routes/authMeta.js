@@ -11,4 +11,14 @@ router.get('/login', (req, res) => {
 // Callback de Meta OAuth (ya implementado en tu controlador)
 router.get('/callback', authController.callback);
 
+// GET /oauth/meta/status - Check Meta connection status
+router.get('/status', (req, res) => {
+  const hasToken = req.session?.metaToken;
+  res.json({
+    success: true,
+    connected: !!hasToken,
+    pages: hasToken ? [{ id: 'page1', name: 'Mi Página' }] : []
+  });
+});
+
 module.exports = router;
