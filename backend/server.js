@@ -1,13 +1,28 @@
 require("dotenv").config();
 
 const express = require("express");
+const session = require("express-session");
 const path = require("path");
 const fs = require("fs");
+const sequelize = require("./models/database");
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'shopinista-secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
+/* =============================
+   DATABASE SYNC
+============================= */
+sequelize.authenticate()
+  .then(() => console.log("✅ Database connected"))
+  .catch(e => console.error("⚠️ Database error:", e.message));
 
 /* =============================
    AUTO LOAD ROUTES (SAFE)
