@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { createRequire } = require("module");
 const requireModel = createRequire(__filename);
-const Product = requireModel("../models").Product;
+const Product = requireModel("../models/Product.js").default;
 
 const TIENDANUBE_BASE = (process.env.TIENDANUBE_STORE_URL || "").replace(/\/+$/, "");
 const TIENDANUBE_TOKEN = process.env.TIENDANUBE_API_TOKEN || "";

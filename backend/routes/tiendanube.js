@@ -1,17 +1,17 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { fetchProducts, syncProducts, getFeedImageUrls } = require("../services/tiendanube.service");
+const { fetchProducts, syncProducts, getFeedImageUrls } = require('../services/tiendanube.service');
 
-const storeUrl = process.env.TIENDANUBE_STORE_URL || "";
+const storeUrl = process.env.TIENDANUBE_STORE_URL || '';
 const hasToken = !!process.env.TIENDANUBE_API_TOKEN;
 
 // GET /tiendanube/health
-router.get("/health", (req, res) => {
+router.get('/health', (req, res) => {
   try {
     const ok = storeUrl.length > 0 && hasToken;
     res.json({
       success: true,
-      status: ok ? "ok" : "misconfigured",
+      status: ok ? 'ok' : 'misconfigured',
       store_url: storeUrl || null,
       token_present: hasToken,
     });
@@ -21,7 +21,7 @@ router.get("/health", (req, res) => {
 });
 
 // GET /tiendanube/products
-router.get("/products", async (req, res) => {
+router.get('/products', async (req, res) => {
   try {
     const limit = parseInt(req.query.limit, 10) || 50;
     const products = await fetchProducts({ limit });
@@ -32,9 +32,9 @@ router.get("/products", async (req, res) => {
 });
 
 // POST /tiendanube/sync
-router.post("/sync", async (req, res) => {
+router.post('/sync', async (req, res) => {
   try {
-    const limit = typeof req.body.limit === "number" ? req.body.limit : 50;
+    const limit = typeof req.body.limit === 'number' ? req.body.limit : 50;
     const { synced, errors } = await syncProducts({ limit });
     res.json({
       success: true,
@@ -48,7 +48,7 @@ router.post("/sync", async (req, res) => {
 });
 
 // GET /tiendanube/images/feed
-router.get("/images/feed", async (req, res) => {
+router.get('/images/feed', async (req, res) => {
   try {
     const limit = parseInt(req.query.limit, 10) || 100;
     const imageUrls = await getFeedImageUrls({ limit, publishedOnly: true });
